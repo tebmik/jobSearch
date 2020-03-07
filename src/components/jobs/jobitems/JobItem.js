@@ -1,4 +1,5 @@
 import React from "react";
+import Buttons from "./buttons/Buttons";
 
 const JobItem = ({item}) => {
 
@@ -37,9 +38,13 @@ const JobItem = ({item}) => {
             color:"#2D2D2D",
             fontWeight:"bold",
         },
+        descriptionWrapper: {
+            maxHeight:100,
+            overflow:"hidden",
+        },
         description : {
             color:"#767676",
-            fontSize:"23px",
+            fontSize:"18px",
         },
     }
 
@@ -56,7 +61,12 @@ const JobItem = ({item}) => {
             <div style={style.salaryWrapper}>
                 <span style={style.salary}>£{item.salary_min}</span>
             </div>
-            <p style={style.desription}>{item.description}</p>
+            <div style={style.descriptionWrapper}>
+                <p style={style.description}>{item.description}</p>
+            </div>
+            <div>
+                <Buttons />
+            </div>
         </div>
     );
 };
