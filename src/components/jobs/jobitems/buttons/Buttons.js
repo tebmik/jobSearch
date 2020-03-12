@@ -16,7 +16,7 @@ const Buttons = () => {
         buttonWrapper: {
             width:"100%",
             display:"grid",
-            gridTemplateColumns:"1fr 1fr",
+            gridTemplateColumns:"repeat(auto-fit, minmax(130px, 1fr))",
             gridGap:"10px",
             paddingTop:20,
         }
