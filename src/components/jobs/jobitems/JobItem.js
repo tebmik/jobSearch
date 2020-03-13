@@ -61,7 +61,9 @@ const JobItem = ({item, onJobSelect, key}) => {
         },
     }
 
-
+    const handleDelete = () => {
+        console.log(`Delete ${item.id}?`);
+    }
     return (
         <>
             <div
@@ -81,7 +83,7 @@ const JobItem = ({item, onJobSelect, key}) => {
                 </div> */}
             </div>
             <div style={style.btnWrapper}>
-                <Buttons item={item}/>
+                <Buttons handleDelete={handleDelete} item={item.id}/>
             </div>
         </>
     );
