@@ -11,6 +11,15 @@ const JobDetail = ({job}) => {
         return <p>Loading...</p>
     }
 
+    const salaryStr = () => {
+        if(job.salary_min === job.salary_max) {
+        return <p>{`Salary: £${job.salary_min}`}</p>
+        } else if(job.salary_max > job.salary_min) {
+            return <p>{`Salary: £${job.salary_min} / £${job.salary_max} Dependent on experience`}</p>
+        } 
+    }
+    
+
     const style = {
         wrapper: {
             position:"sticky",
@@ -46,7 +55,8 @@ const JobDetail = ({job}) => {
             gridTemplateColumns:"26px auto",
         },
         icon:{
-            fontSize:"24px"
+            fontSize:"24px", 
+            color: "#a4a4a4"
         },
         location: {
             color:"#2d2d2d",
@@ -105,6 +115,9 @@ const JobDetail = ({job}) => {
                         ${job.contract_time},  
                         ${job.contract_type}`}
                     </p>
+                </div>
+                <div>
+                    <p>{salaryStr()}</p>
                 </div>
                 <div>
                     <span>{`Date Posted: ${dateStr}`}</span>

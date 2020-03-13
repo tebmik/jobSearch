@@ -1,7 +1,7 @@
 import React from "react";
 import Buttons from "./buttons/Buttons";
 
-const JobItem = ({item, onJobSelect}) => {
+const JobItem = ({item, onJobSelect, key}) => {
 
     const style = {
         wrapper: {
@@ -81,7 +81,7 @@ const JobItem = ({item, onJobSelect}) => {
                 </div> */}
             </div>
             <div style={style.btnWrapper}>
-                <Buttons />
+                <Buttons item={item}/>
             </div>
         </>
     );

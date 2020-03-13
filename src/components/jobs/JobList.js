@@ -2,6 +2,7 @@ import React from "react";
 import JobItem from "./jobitems/JobItem";
 
 const JobList = ({jobs, onJobSelect}) => {
+
     const renderList = jobs.map(item => {
         return(
             <JobItem 

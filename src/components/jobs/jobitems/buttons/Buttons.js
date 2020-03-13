@@ -10,7 +10,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Buttons = () => {
+const Buttons = ({item}) => {
+    const handleDelete = () => {
+      console.log(`Delete ${item}?`);
+    }
     const classes = useStyles()
     const style = {
         buttonWrapper: {
@@ -24,7 +27,12 @@ const Buttons = () => {
     return (
         <div style={style.buttonWrapper} classes={classes.root}>
             <Button variant="outlined" color="primary">Save</Button>
-            <Button variant="outlined" color="secondary">Remove</Button>
+            <Button 
+              onClick={() => handleDelete()}
+              variant="outlined" 
+              color="secondary">
+                Remove
+            </Button>
         </div>
     );
 };
