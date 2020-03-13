@@ -11,14 +11,12 @@ const JobDetail = ({job}) => {
         return <p>Loading...</p>
     }
 
-    const salaryStr = () => {
-        if(job.salary_min === job.salary_max) {
-        return <p>{`Salary: £${job.salary_min}`}</p>
-        } else if(job.salary_max > job.salary_min) {
-            return <p>{`Salary: £${job.salary_min} / £${job.salary_max} Dependent on experience`}</p>
-        } 
-    }
-    
+    const salaryStr = () => 
+        job.salary_max > job.salary_min 
+            ? 
+                <p>{`Salary: £${job.salary_min} / £${job.salary_max} Dependent on experience`}</p> 
+            : 
+                <p>{`Salary: £${job.salary_min}`}</p>
 
     const style = {
         wrapper: {
